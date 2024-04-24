@@ -1,0 +1,21 @@
+﻿@model eticaret_uygula.Models.ConfirmUser
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_homeLayout.cshtml";
+}
+
+<h1>Mail Onaylama Formu</h1>
+<form method="post" asp-action="Index" asp-controller="ConfirmMail">
+    <div class="from-group">
+        <h2>Onay Formundaki Gönderilen Mail Adreesiniz @ViewBag.Email</h2>
+        <input class="form-control"  type="text" vaule="@ViewBag.Email" asp-for="Mail" placeholder="Mail Adresiniz Girin:"/>
+    </div>
+    <div class="from-group">
+        <h2>Onay Kodunuzu Girin</h2>
+        <input type ="text" class="form-control" asp-for="ConfirmCode" plahceholder="Kodunuzu Girin:"/>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="subwit">Hesabı Onayla</button>
+    </div>
+</form>
+
